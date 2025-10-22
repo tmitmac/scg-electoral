@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom orange theme classes */
+.bg-primary {
+    background-color: #FF7B25;
+}
+.text-primary {
+    color: #FF7B25;
+}
+.border-primary {
+    border-color: #FF7B25;
+}
+.bg-secondary {
+    background-color: #FFA364;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #FF7B25;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e06b1e;
+}
+
+/* Animation for important elements */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.important-pulse {
+    animation: pulse 2s infinite;
+}
