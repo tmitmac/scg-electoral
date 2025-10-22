@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Registration | SquareVote - Electoral Commission</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#FF7B25',
+              secondary: '#FFA364'
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <section class="text-center py-12">
+            <h1 class="text-4xl font-bold text-primary mb-4">Voter Registration</h1>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Ensure your voice is heard. Check your registration status, update your details, or register to vote.
+            </p>
+        </section>
+
+        <!-- Actions Section -->
+        <section class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Check Registration -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300 text-center">
+                <div class="text-primary mb-4">
+                    <i data-feather="search" class="w-12 h-12 mx-auto"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Check Your Registration</h3>
+                <p class="text-gray-600 mb-4">Confirm your voter registration status and ensure your information is up-to-date.</p>
+                <a href="check-registration.html" class="bg-primary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300">Check Status</a>
+            </div>
+
+            <!-- Register to Vote -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300 text-center">
+                <div class="text-primary mb-4">
+                    <i data-feather="edit-3" class="w-12 h-12 mx-auto"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Register to Vote</h3>
+                <p class="text-gray-600 mb-4">If you're new or recently moved, complete your voter registration quickly online.</p>
+                <a href="register.html" class="bg-primary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300">Register Now</a>
+            </div>
+
+            <!-- Update Details -->
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300 text-center">
+                <div class="text-primary mb-4">
+                    <i data-feather="refresh-ccw" class="w-12 h-12 mx-auto"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Update Your Details</h3>
+                <p class="text-gray-600 mb-4">Moved recently? Changed your name? Update your registration details easily.</p>
+                <a href="update-details.html" class="bg-primary hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition duration-300">Update Info</a>
+            </div>
+        </section>
+
+        <!-- Information Section -->
+        <section class="bg-primary/5 p-8 rounded-xl shadow-inner">
+            <h2 class="text-2xl font-bold text-primary mb-4">Who Can Register?</h2>
+            <ul class="list-disc list-inside text-gray-700 mb-4">
+                <li>You must be a citizen or permanent resident of Square Country.</li>
+                <li>You must be at least 18 years old to vote in general elections.</li>
+                <li>You must provide valid proof of identity.</li>
+            </ul>
+            <p class="text-gray-600 mb-4">
+                Registration is open year-round, but you must be registered before the cut-off date to vote in an election.
+            </p>
+            <a href="election-dates.html" class="text-primary font-semibold hover:underline">View upcoming registration deadlines →</a>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

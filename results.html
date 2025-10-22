@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results - SquareVote</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-12">
+        <!-- Page Header -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-primary mb-4">Election Results</h1>
+            <div class="w-24 h-2 bg-primary mx-auto mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Official results from recent and historical elections in Square Country.</p>
+        </section>
+
+        <!-- Election Selector -->
+        <section class="mb-12">
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Select Election</h2>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <select id="yearSelect" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option value="">Election Year</option>
+                        <option value="2023">2023</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2014">2014</option>
+                        <option value="2010">2010</option>
+                        <option value="2006">2006</option>
+                        <option value="2002">2002</option>
+                        <option value="1998">1998</option>
+                        <option value="1994">1994</option>
+                        <option value="1990">1990</option>
+                        <option value="1986">1986</option>
+
+                    </select>
+                    <select id="typeSelect" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option value="">Unavailable</option>
+                    </select>
+                    <select id="stateSelect" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option value="">Unavailable</option>
+                    </select>
+                    <button id="viewResultsBtn" class="bg-primary hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg shadow-md transition duration-300">
+                        View Results
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Results -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center" id="currentResultsHeader">2023 General Election Results</h2>
+            
+            <!-- Results Overview -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i data-feather="users" class="text-primary"></i>
+                        Voter Turnout
+                    </h3>
+                    <div class="text-5xl font-bold text-primary mb-2" id="voterTurnout">64.2%</div>
+                    <p class="text-gray-600">of registered voters participated</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>Previous election</span>
+                            <span id="prevTurnout">58.7%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" id="turnoutBar" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i data-feather="check-circle" class="text-primary"></i>
+                        Valid Ballots
+                    </h3>
+                    <div class="text-5xl font-bold text-primary mb-2" id="validBallots">98.5%</div>
+                    <p class="text-gray-600">of votes cast were valid</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>Rejected ballots</span>
+                            <span id="rejectedBallots">1.5%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" id="rejectedBar" style="width: 1.5%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i data-feather="clock" class="text-primary"></i>
+                        Results Timing
+                    </h3>
+                    <div class="text-5xl font-bold text-primary mb-2" id="resultsTiming">94%</div>
+                    <p class="text-gray-600">of electorates reporting</p>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm text-gray-500 mb-1">
+                            <span>Final results expected</span>
+                            <span id="finalDate">Nov 22</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" id="resultsBar" style="width: 94%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Charts -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6">Main Parties</h3>
+                    <div class="h-64">
+                        <canvas id="partyChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6">Seats in the House</h3>
+                    <div class="h-64">
+                        <canvas id="seatChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Results -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Historical Election Data</h2>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 border-b border-gray-200">
+                    <h3 class="text-xl font-bold">National Elections</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Year</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Election</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Turnout</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Winner</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Vote Share</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2023</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">67.3%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Liberty Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">52.1%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2019</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">63.8%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Liberty Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">48.7%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2018</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">78.2%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Liberty Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">56.8%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2014</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">61.2%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Liberty Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">53.4%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2010</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">59.5%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Freedoms Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">49.2%</td>
+                            </tr>
+                               <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2006</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">65.3%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Freedoms Party + Innovation Party Coalition</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">51.0%</td>
+                            </tr>
+                               <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2002</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">62%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Liberty Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">52.9%</td>
+                            </tr>
+                               <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1998</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">68.5%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Liberty Party + Square Country First Coalition Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45.6%</td>
+                            </tr>
+                               <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1994</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">82.0%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Freedoms Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">78.0%</td>
+                            </tr>
+                               <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1990</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">58.6%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Freedoms Party + Alliance Party Coalition</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45.1%</td>
+                            </tr>
+                               <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1986</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">General Election</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">64.3%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Liberty Party</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">70.0%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+<!-- Historic Results Notice -->
+  <div class="mt-4 bg-orange-100 border-l-4 border-orange-500 p-4 rounded-lg">
+    <p class="text-gray-800">
+      For election results prior to <strong>1986</strong>, visit the 
+      <a href="historic-results.html" class="text-orange-600 font-semibold hover:underline">
+        Historic Results page
+      </a>.
+    </p>
+  </div>
+
+        <!-- Data Downloads -->
+        <section class="bg-primary/5 p-8 rounded-xl">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Election Data Downloads</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-primary mb-4">
+                        <i data-feather="file-text" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Official Results</h3>
+                    <p class="text-gray-600 mb-4">Download certified election results in CSV or PDF format.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-3 rounded-lg transition duration-300">
+                            <i data-feather="download" class="w-4 h-4 inline mr-1"></i> CSV
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-3 rounded-lg transition duration-300">
+                            <i data-feather="download" class="w-4 h-4 inline mr-1"></i> PDF
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-primary mb-4">
+                        <i data-feather="database" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Raw Data</h3>
+                    <p class="text-gray-600 mb-4">Access complete datasets for analysis in JSON or XML formats.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-3 rounded-lg transition duration-300">
+                            <i data-feather="download" class="w-4 h-4 inline mr-1"></i> JSON
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-3 rounded-lg transition duration-300">
+                            <i data-feather="download" class="w-4 h-4 inline mr-1"></i> XML
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-primary mb-4">
+                        <i data-feather="bar-chart-2" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Statistical Reports</h3>
+                    <p class="text-gray-600 mb-4">Detailed analysis of voter demographics and participation.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-3 rounded-lg transition duration-300">
+                            <i data-feather="download" class="w-4 h-4 inline mr-1"></i> PDF Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+
+        const electionData = {
+          "2023": {voterTurnout: 64.2, previousTurnout: 58.7, validBallots: 98.5, rejectedBallots: 1.5, resultsTiming: 94, finalDate: "Nov 22", partyChart: [4247921, 2786449, 839273, 279757], seatChart: [15, 6, 3, 1, 1, 0]},
+          "2019": {voterTurnout: 63.8, previousTurnout: 61.0, validBallots: 97.8, rejectedBallots: 2.2, resultsTiming: 92, finalDate: "Nov 20", partyChart: [3987132, 3120420, 628044, 286517], seatChart: [14, 7, 2, 2, 1, 0]},
+          "2018": {voterTurnout: 78.2, previousTurnout: 62.7, validBallots: 98.9, rejectedBallots: 1.1, resultsTiming: 97, finalDate: "Within 3 Days ", partyChart: [4679110, 2674098, 621036, 250571], seatChart: [17, 4, 3, 1, 1, 0]},
+          "2014": {voterTurnout: 62.7, previousTurnout: 59.5, validBallots: 96.8, rejectedBallots: 3.2, resultsTiming: 92, finalDate: "Sep 29", partyChart: [3548772, 2761198, 510322, 200036], seatChart: [14, 7, 3, 1, 1, 0]},
+          "2010": {voterTurnout: 59.5, previousTurnout: 57.0, validBallots: 95.0, rejectedBallots: 5.0, resultsTiming: 88, finalDate: "Nov 15", partyChart: [3036821, 3240586, 499476, 181063], seatChart: [9, 14, 2, 1, 0, 0]},
+          "2006": {voterTurnout: 65.3, previousTurnout: 62.0, validBallots: 97.5, rejectedBallots: 2.5, resultsTiming: 95, finalDate: "Oct 22", partyChart: [2566721, 3498346, 450386, 338604], seatChart: [9, 13, 2, 1, 1, 0]},
+          "2002": {voterTurnout: 62.0, previousTurnout: 60.5, validBallots: 96.8, rejectedBallots: 3.2, resultsTiming: 90, finalDate: "Nov 3", partyChart: [3348893, 2754067, 146883, 78545], seatChart: [14, 10, 1, 0, 1, 0]},
+          "1998": {voterTurnout: 60.5, previousTurnout: 82.0, validBallots: 97.0, rejectedBallots: 3.0, resultsTiming: 92, finalDate: "Sep 26", partyChart: [3001512, 2998347, 0, 582312], seatChart: [12, 11, 0, 3, 0]},
+          "1994": {voterTurnout: 82.0, previousTurnout: 58.6, validBallots: 96.0, rejectedBallots: 4.0, resultsTiming: 84, finalDate: "Dec 3", partyChart: [1277489, 4930211, 0, 112048], seatChart: [5, 17, 0, 2, 0, 2]},
+          "1990": {voterTurnout: 58.6, previousTurnout: 63.0, validBallots: 97.2, rejectedBallots: 2.8, resultsTiming: 90, finalDate: "Oct 14", partyChart: [2965332, 3054789, 0, 746108], seatChart: [9, 10, 0, 2, 1, 4]},
+          "1986": {voterTurnout: 64.3, previousTurnout: '?', validBallots: 97.5, rejectedBallots: 2.5, resultsTiming: 91, finalDate: "Aug 6", partyChart: [4203963, 1452100, 0, 344894], seatChart: [19, 4, 0, 0, 0, 2, 1]}
+        };
+
+        const partyColors = { 'LIB':'#43c564', 'FRE':'#c93936', 'GRE':'#3e6641', 'Other':'#6B7280' };
+        const councilColors = { 'Liberty Party':'#43c564', 'Freedoms Party':'#c93936', 'Green Party':'#3e6641', 'Square Country First':'#6f6d6d', 'Innovation Party':'#fbe778', 'Alliance Party':'#3fffcb', 'National Libertarian Coalition': '#f60095' };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const partyCtx = document.getElementById('partyChart').getContext('2d');
+            window.partyChart = new Chart(partyCtx, {
+                type: 'bar',
+                data: { 
+                    labels: ['LIB','FRE','GRE','Other'], 
+                    datasets: [{label: 'Votes', data: electionData["2023"].partyChart, backgroundColor: ['#43c564','#c93936','#3e6641','#6B7280'], borderWidth: 0}]
+                },
+                options: {responsive: true, plugins: {legend: {display: false}}, scales: {y: {beginAtZero: true}}}
+            });
+
+            const councilCtx = document.getElementById('seatChart').getContext('2d');
+            const councilSorted = ['Liberty Party','Freedoms Party','Green Party','Square Country First','Innovation Party', 'Alliance Party', 'National Libertarian Coalition']
+                                  .map((label,i)=>({label,value:electionData["2023"].seatChart[i],color:councilColors[label]}))
+                                  .filter(d=>d.value > 0)
+                                  .sort((a,b)=>b.value-a.value);
+
+            window.seatChart = new Chart(councilCtx, {
+                type: 'doughnut',
+                data: { labels: councilSorted.map(d=>d.label), datasets: [{ data: councilSorted.map(d=>d.value), backgroundColor: councilSorted.map(d=>d.color), borderWidth:0 }]},
+                options: {responsive: true, plugins: {legend: {position:'bottom'}}}
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const yearSelect = document.getElementById("yearSelect");
+          const viewBtn = document.getElementById("viewResultsBtn");
+          const header = document.getElementById("currentResultsHeader");
+
+          const voterTurnoutEl = document.getElementById("voterTurnout");
+          const prevTurnoutEl = document.getElementById("prevTurnout");
+          const validBallotsEl = document.getElementById("validBallots");
+          const rejectedEl = document.getElementById("rejectedBallots");
+          const resultsTimingEl = document.getElementById("resultsTiming");
+          const finalDateEl = document.getElementById("finalDate");
+
+          viewBtn.addEventListener("click", () => {
+            const year = yearSelect.value || "2023";
+            header.textContent = `${year} General Election Results`;
+            const data = electionData[year];
+
+            voterTurnoutEl.textContent = data.voterTurnout + "%";
+            prevTurnoutEl.textContent = data.previousTurnout + "%";
+            validBallotsEl.textContent = data.validBallots + "%";
+            rejectedEl.textContent = data.rejectedBallots + "%";
+            resultsTimingEl.textContent = data.resultsTiming + "%";
+            finalDateEl.textContent = data.finalDate;
+
+            const partyLabels = ['LIB','FRE','GRE','Other'];
+            const partySorted = partyLabels.map((label,i)=>({label,value:data.partyChart[i],color:partyColors[label]}))
+                                           .sort((a,b)=>b.value-a.value);
+
+            const councilLabels = ['Liberty Party','Freedoms Party','Green Party','Square Country First','Innovation Party', 'Alliance Party', 'National Libertarian Coalition'];
+            const councilSorted = councilLabels.map((label,i)=>({label,value:data.seatChart[i],color:councilColors[label]}))
+                                               .filter(d=>d.value > 0)
+                                               .sort((a,b)=>b.value-a.value);
+
+            if(window.partyChart && window.seatChart){
+              window.partyChart.data.labels = partySorted.map(d=>d.label);
+              window.partyChart.data.datasets[0].data = partySorted.map(d=>d.value);
+              window.partyChart.data.datasets[0].backgroundColor = partySorted.map(d=>d.color);
+
+              window.seatChart.data.labels = councilSorted.map(d=>d.label);
+              window.seatChart.data.datasets[0].data = councilSorted.map(d=>d.value);
+              window.seatChart.data.datasets[0].backgroundColor = councilSorted.map(d=>d.color);
+
+              window.partyChart.update();
+              window.seatChart.update();
+            }
+          });
+        });
+    </script>
+</body>
+</html>

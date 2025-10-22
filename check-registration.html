@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Registration | SquareVote - Electoral Commission</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: { colors: { primary: '#FF7B25', secondary: '#FFA364' } }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-gray-50">
+  <custom-navbar></custom-navbar>
+
+  <main class="container mx-auto px-4 py-12">
+    <section class="text-center mb-10">
+      <h1 class="text-4xl font-bold text-primary mb-3">Check Your Registration</h1>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Use the form below to confirm if you are registered to vote in Square Country.
+      </p>
+    </section>
+
+    <section class="bg-white shadow-lg rounded-xl p-8 max-w-lg mx-auto">
+      <form id="checkForm" class="space-y-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+          <input type="text" required class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. Alex Johnson">
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Date of Birth</label>
+          <input type="date" required class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Region</label>
+          <select required class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary">
+            <option value="">Select your region</option>
+            <option>Northern Territories</option>
+            <option>Square City District</option>
+            <option>Eastlake District</option>
+            <option>Eastern Boundaries</option>
+            <option>Southern Regions</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full bg-primary hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition duration-300">
+          Check Registration
+        </button>
+      </form>
+      <p class="text-sm text-gray-500 text-center mt-4">
+        Your details will be securely verified by the Electoral Commission.
+      </p>
+    </section>
+  </main>
+
+  <custom-footer></custom-footer>
+
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
+
+  <script>
+    feather.replace();
+
+    // Redirect to success page when form is submitted
+    document.getElementById('checkForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = 'registered.html';
+    });
+  </script>
+</body>
+</html>

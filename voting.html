@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Vote - SquareVote</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-12">
+        <!-- Page Header -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-primary mb-4">How to Vote</h1>
+            <div class="w-24 h-2 bg-primary mx-auto mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Everything you need to know to participate in Square Country elections.</p>
+        </section>
+
+        <!-- Voting Process Steps -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Voting Process</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl font-bold text-primary mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-4">Check Your Registration</h3>
+                    <p class="text-gray-600 mb-6">Verify your voter registration status or register to vote if you haven't already. Registration deadlines are typically 30 days before an election.</p>
+                    <a href="registration.html" class="inline-flex items-center text-primary font-medium hover:underline">
+                        Check registration
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl font-bold text-primary mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-4">Find Your Polling Place</h3>
+                    <p class="text-gray-600 mb-6">Locate your assigned polling place based on your registered address. Polling places are open from 7:00 AM to 8:00 PM on Election Day.</p>
+                    <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                        Find polling place
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-5xl font-bold text-primary mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-4">Cast Your Ballot</h3>
+                    <p class="text-gray-600 mb-6">Bring required ID to your polling place, follow instructions from election officials, and cast your vote using our secure systems.</p>
+                    <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                        ID requirements
+                        <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voting Methods -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Voting Methods</h2>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <i data-feather="user-check" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">In-Person Voting</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">Traditional voting at your assigned polling place on Election Day. Polls are open from 7:00 AM to 8:00 PM.</p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Most common method</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Same-day registration available</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Assistance available for voters with disabilities</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            More about in-person voting
+                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <div class="bg-primary/5 p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <i data-feather="mail" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Mail-In Voting</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">Vote from home by requesting an absentee ballot. Available to all registered voters without requiring an excuse.</p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Request deadline: 7 days before Election Day</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Postmark deadline: Election Day</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Track your ballot online</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            Request mail-in ballot
+                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 border-t border-gray-200">
+                    <div class="p-8 border-r border-gray-200">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <i data-feather="clock" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Early Voting</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">Vote in person before Election Day at designated early voting locations throughout Square Country.</p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Available 15 days before Election Day</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Weekdays: 8:00 AM - 6:00 PM</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Weekends: 9:00 AM - 4:00 PM</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            Find early voting locations
+                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <div class="bg-primary/5 p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <i data-feather="smartphone" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Accessible Voting</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">Special accommodations for voters with disabilities, including accessible voting machines and curbside voting.</p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Audio ballots available</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Large print and braille options</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i data-feather="check" class="text-primary w-4 h-4 mt-1 flex-shrink-0"></i>
+                                <span class="text-gray-600">Curbside voting at all polling places</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            Accessibility services
+                            <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="divide-y divide-gray-200">
+                        <div class="p-6">
+                            <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                                <h3 class="text-lg font-medium text-gray-800">What forms of ID are acceptable for voting?</h3>
+                                <i data-feather="chevron-down" class="text-primary w-5 h-5 transform transition-transform duration-200"></i>
+                            </button>
+                            <div class="mt-3 text-gray-600 hidden">
+                                <p>Acceptable forms of ID include a Square Country driver's license, state ID card, passport, military ID, or tribal identification card. Voters without ID may sign an affidavit of identity.</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                                <h3 class="text-lg font-medium text-gray-800">How do I know if I'm registered to vote?</h3>
+                                <i data-feather="chevron-down" class="text-primary w-5 h-5 transform transition-transform duration-200"></i>
+                            </button>
+                            <div class="mt-3 text-gray-600 hidden">
+                                <p>You can check your registration status online through our Voter Portal or by contacting your local election office. You'll need to provide your name, date of birth, and address to verify your registration.</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                                <h3 class="text-lg font-medium text-gray-800">Can I vote if I've recently moved?</h3>
+                                <i data-feather="chevron-down" class="text-primary w-5 h-5 transform transition-transform duration-200"></i>
+                            </button>
+                            <div class="mt-3 text-gray-600 hidden">
+                                <p>If you've moved within Square Country, you can update your registration online up to 30 days before an election or at your new polling place on Election Day. If you've moved from another state, you'll need to register in Square Country.</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                                <h3 class="text-lg font-medium text-gray-800">What are the voter eligibility requirements?</h3>
+                                <i data-feather="chevron-down" class="text-primary w-5 h-5 transform transition-transform duration-200"></i>
+                            </button>
+                            <div class="mt-3 text-gray-600 hidden">
+                                <p>To vote in Square Country, you must be a citizen, at least 18 years old by Election Day, a resident of Square Country, and not currently serving a felony sentence in prison.</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                                <h3 class="text-lg font-medium text-gray-800">What happens if I make a mistake on my ballot?</h3>
+                                <i data-feather="chevron-down" class="text-primary w-5 h-5 transform transition-transform duration-200"></i>
+                            </button>
+                            <div class="mt-3 text-gray-600 hidden">
+                                <p>If voting in person, notify a poll worker immediately. They can issue you a new ballot. For mail-in ballots, contact your local election office for instructions on obtaining a replacement ballot.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Dates -->
+        <section class="bg-primary/5 p-8 rounded-xl">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Important Election Dates</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Upcoming Elections</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-primary/10 text-primary text-sm font-bold px-3 py-1 rounded-lg">May 15</div>
+                            <div>
+                                <h4 class="font-medium">Municipal Elections</h4>
+                                <p class="text-sm text-gray-600">Register by April 15</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-primary/10 text-primary text-sm font-bold px-3 py-1 rounded-lg">Nov 5</div>
+                            <div>
+                                <h4 class="font-medium">General Election</h4>
+                                <p class="text-sm text-gray-600">Register by October 5</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Key Deadlines</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-primary/10 text-primary text-sm font-bold px-3 py-1 rounded-lg">Apr 15</div>
+                            <div>
+                                <h4 class="font-medium">Voter Registration Deadline</h4>
+                                <p class="text-sm text-gray-600">For May elections</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-primary/10 text-primary text-sm font-bold px-3 py-1 rounded-lg">May 1</div>
+                            <div>
+                                <h4 class="font-medium">Early Voting Begins</h4>
+                                <p class="text-sm text-gray-600">For May elections</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-primary/10 text-primary text-sm font-bold px-3 py-1 rounded-lg">May 14</div>
+                            <div>
+                                <h4 class="font-medium">Early Voting Ends</h4>
+                                <p class="text-sm text-gray-600">For May elections</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // FAQ toggle function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>

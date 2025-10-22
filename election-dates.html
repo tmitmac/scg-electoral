@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Election Dates | SquareVote - Electoral Commission</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF7B25',
+            secondary: '#FFA364'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <custom-navbar></custom-navbar>
+
+  <main class="container mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-primary mb-4">Upcoming Election Dates</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Stay informed about national, regional, and local election schedules — including registration and voting deadlines.
+      </p>
+    </section>
+
+    <!-- Upcoming Elections Table -->
+    <section class="bg-white rounded-xl shadow-lg p-8 mb-12">
+      <h2 class="text-2xl font-semibold text-primary mb-6">2026 Election Calendar</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-200">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="px-6 py-3 text-left font-medium">Election</th>
+              <th class="px-6 py-3 text-left font-medium">Date</th>
+              <th class="px-6 py-3 text-left font-medium">Registration Deadline</th>
+              <th class="px-6 py-3 text-left font-medium">Advance Voting</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-4 font-medium">National General Election</td>
+              <td class="px-6 py-4">Saturday, 12 September 2027</td>
+              <td class="px-6 py-4">Friday, 21 August 2027</td>
+              <td class="px-6 py-4">1 – 11 September 2027</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium">Regional Council Elections</td>
+              <td class="px-6 py-4">Saturday, 7 March 2026</td>
+              <td class="px-6 py-4">Friday, 13 February 2026</td>
+              <td class="px-6 py-4">24 February – 6 March 2026</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-medium">Local Government (Mayoral & Ward) Elections</td>
+              <td class="px-6 py-4">Saturday, 10 October 2026</td>
+              <td class="px-6 py-4">Friday, 18 September 2026</td>
+              <td class="px-6 py-4">27 September – 9 October 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Key Notes -->
+    <section class="bg-primary/5 p-6 rounded-xl border border-primary/20">
+      <h3 class="text-xl font-semibold text-primary mb-3">Important Information</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Voters must be registered by the listed deadline to participate in each election.</li>
+        <li>Advance voting is available for all registered voters during the dates shown above.</li>
+        <li>Election results will be published on the official <a href="results.html" class="text-primary font-semibold hover:underline">Results Page</a>.</li>
+      </ul>
+    </section>
+
+    <!-- Back Button -->
+    <div class="text-center mt-12">
+      <a href="index.html" class="text-primary font-semibold hover:underline">
+        ← Back to Home
+      </a>
+    </div>
+  </main>
+
+  <custom-footer></custom-footer>
+
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>

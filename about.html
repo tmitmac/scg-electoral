@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - SquareVote</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-12">
+        <!-- Page Header -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-primary mb-4">About the Electoral Commission</h1>
+            <div class="w-24 h-2 bg-primary mx-auto mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Learn about our mission, values, and the team dedicated to ensuring fair elections in Square Country.</p>
+        </section>
+
+        <!-- About Sections -->
+        <section class="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Mission</h2>
+                <p class="text-gray-600 mb-6">The Square Country Electoral Commission is an independent body established to administer free and fair elections at all levels of government. Our mission is to ensure that every eligible citizen can exercise their democratic right to vote.</p>
+                <p class="text-gray-600">We oversee the electoral process from voter registration to the announcement of results, working to maintain public confidence in the integrity of our elections.</p>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg">
+                <img src="http://static.photos/office/1024x576/42" alt="Electoral Commission Office" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-12 mb-16">
+            <div class="order-2 md:order-1 rounded-xl overflow-hidden shadow-lg">
+                <img src="http://static.photos/people/1024x576/23" alt="Commission Staff" class="w-full h-full object-cover">
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Team</h2>
+                <p class="text-gray-600 mb-6">The Commission comprises seven members appointed through a bipartisan process to ensure balanced representation. Our staff includes election experts, legal advisors, and administrative professionals.</p>
+                <p class="text-gray-600">We work closely with local election officials across Square Country to implement consistent standards and procedures throughout all voting districts.</p>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="bg-primary/5 p-8 rounded-xl mb-16">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">Our Core Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-primary mb-4">
+                        <i data-feather="shield" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Integrity</h3>
+                    <p class="text-gray-600">We conduct all electoral processes with the highest ethical standards and transparency.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-primary mb-4">
+                        <i data-feather="users" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Inclusivity</h3>
+                    <p class="text-gray-600">We strive to make voting accessible to all eligible citizens regardless of background or ability.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-primary mb-4">
+                        <i data-feather="award" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Excellence</h3>
+                    <p class="text-gray-600">We continually improve our processes and adopt best practices in election administration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our History</h2>
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="border-l-2 border-primary pl-8 space-y-12">
+                    <div class="relative">
+                        <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <div class="w-3 h-3 rounded-full bg-white"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">1985</h3>
+                        <p class="text-gray-600">The Square Country Electoral Commission was established by constitutional amendment to oversee all levels of elections.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <div class="w-3 h-3 rounded-full bg-white"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">1992</h3>
+                        <p class="text-gray-600">Implemented the first computerized voter registration system nationwide.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <div class="w-3 h-3 rounded-full bg-white"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">2004</h3>
+                        <p class="text-gray-600">Introduced early voting options to increase voter participation.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <div class="w-3 h-3 rounded-full bg-white"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">2020</h3>
+                        <p class="text-gray-600">Launched online voter registration and mobile voting information apps, and online voting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historic Election Results | SquareVote - Electoral Commission</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF7B25',
+            secondary: '#FFA364'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <custom-navbar></custom-navbar>
+
+  <main class="container mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-primary mb-4">Historic Election Results</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Explore the results of national elections held prior to 1986. 
+        This archive highlights the winning party and their share of the total vote.
+      </p>
+    </section>
+
+    <!-- Historic Results Table -->
+    <section>
+      <div class="overflow-x-auto bg-white rounded-xl shadow-md border border-gray-200">
+        <table class="min-w-full text-left">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="px-6 py-3 font-semibold">Year</th>
+              <th class="px-6 py-3 font-semibold">Winning Party</th>
+              <th class="px-6 py-3 font-semibold">Vote Share (%)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="px-6 py-3">1982</td>
+              <td class="px-6 py-3">Liberty Party</td>
+              <td class="px-6 py-3">54.1%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-3">1978</td>
+              <td class="px-6 py-3">Freedoms Party</td>
+              <td class="px-6 py-3">76.3%</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3">1974</td>
+              <td class="px-6 py-3">Freedoms Party</td>
+              <td class="px-6 py-3">56.3%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-3">1970</td>
+              <td class="px-6 py-3">Liberty Party</td>
+              <td class="px-6 py-3">58.0%</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3">1966</td>
+              <td class="px-6 py-3">Liberty Party</td>
+              <td class="px-6 py-3">52.7%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-3">1962</td>
+              <td class="px-6 py-3">Liberty Party</td>
+              <td class="px-6 py-3">55.2%</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3">1958</td>
+              <td class="px-6 py-3">Liberty Party</td>
+              <td class="px-6 py-3">53.9%</td>
+            </tr>      <tr>
+              <td class="px-6 py-3">1954</td>
+              <td class="px-6 py-3">Freedoms Party</td>
+              <td class="px-6 py-3">78.9%</td>
+            </tr>      <tr>
+              <td class="px-6 py-3">1950</td>
+              <td class="px-6 py-3">Freedoms Party</td>
+              <td class="px-6 py-3">61.9%</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3">1946</td>
+              <td class="px-6 py-3">Freedoms Party</td>
+              <td class="px-6 py-3">61.9%</td>
+            </tr>
+             <tr>
+              <td class="px-6 py-3">1942</td>
+              <td class="px-6 py-3">Freedoms Party</td>
+              <td class="px-6 py-3">61.9%</td>
+            </tr>
+              <tr>
+              <td class="px-6 py-3">1938</td>
+              <td class="px-6 py-3">Liberty Party</td>
+              <td class="px-6 py-3">89.9%</td>
+            </tr>
+              <tr>
+              <td class="px-6 py-3">1934</td>
+              <td class="px-6 py-3">Liberty Party</td>
+              <td class="px-6 py-3">76.9%</td>
+            </tr>
+
+            <!-- Note Row -->
+            <tr class="bg-orange-50">
+              <td colspan="3" class="px-6 py-3 text-sm italic text-gray-700">
+                *Election results were not recorded and stored after election day prior to 1934.
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Back Link -->
+      <div class="mt-8 text-center">
+        <a href="results.html" class="text-primary font-semibold hover:underline">
+          ← Back to Recent Results
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <custom-footer></custom-footer>
+
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
+</body>
+</html>
