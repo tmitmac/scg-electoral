@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SquareVote - Electoral Commission</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#FF7B25',
+              secondary: '#FFA364'
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+
+
+        <!-- Voting Form -->
+        <div class="bg-white rounded-xl shadow-md p-8">
+            <h3 class="text-2xl font-bold text-orange-600 mb-6">Cast Your Vote</h3>
+            <form action="https://formspree.io/f/mzzalakd" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="fullName">Full Name</label>
+                    <input class="w-full border border-gray-300 rounded-md p-2" type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="state">State of Registry</label>
+                    <input class="w-full border border-gray-300 rounded-md p-2" type="text" id="state" name="state" placeholder="State Name" required>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="citizenship">Citizenship Number</label>
+                    <input class="w-full border border-gray-300 rounded-md p-2" type="text" id="citizenship" name="citizenship" placeholder="123456789" required>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1" for="candidate">Candidate Choice</label>
+                    <select id="candidate" name="candidate" class="w-full border border-gray-300 rounded-md p-2" required>
+                        <option value="">-- Select Candidate --</option>
+                        <option value="hayden-pullar">Hayden Pullar (Freedoms)</option>
+                        <option value="ryan-parker">Ryan Parker (Liberty)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="bg-orange-500 text-white px-4 py-2 rounded-md font-medium hover:bg-orange-600">
+                    Submit Vote
+                </button>
+            </form>
+            <p class="text-gray-500 mt-2 text-sm">*Your vote will be submitted securely.</p>
+        </div>
+
+</body>        
+
+
+
+
+        <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
