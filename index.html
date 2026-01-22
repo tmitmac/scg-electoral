@@ -1,120 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SquareVote - Electoral Commission</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#FF7B25',
-              secondary: '#FFA364'
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electoral Commission | Square Country</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF7B25',
+            secondary: '#FFA364'
           }
         }
       }
-    </script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    }
+  </script>
+
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="bg-gray-50">
-    <custom-navbar></custom-navbar>
 
+<body class="bg-slate-50 text-slate-800">
 
-    
-    <main class="container mx-auto px-4 py-12">
-        <!-- Hero Section -->
-        <section class="text-center py-16">
-            <h1 class="text-5xl font-bold text-primary mb-6">Square Country Electoral Commission</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ensuring fair and transparent elections across all levels of government.</p>
-            <div class="mt-8 flex justify-center gap-4">
-                <a href="voting.html" class="bg-primary hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300">
-                    How to Vote
-                </a>
-                <a href="results.html" class="bg-white hover:bg-gray-100 text-primary border-2 border-primary font-bold py-3 px-6 rounded-lg shadow-md transition duration-300">
-                    View Results
-                </a>
-            </div>
-        </section>
+<custom-navbar></custom-navbar>
 
-        <!-- Info Cards -->
-        <section class="grid md:grid-cols-3 gap-8 mb-16">
-            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
-                <div class="text-primary mb-4">
-                    <i data-feather="calendar" class="w-12 h-12"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Election Dates</h3>
-                <p class="text-gray-600">Find upcoming election dates and deadlines for registration.</p>
-                <a href="election-dates.html" class="inline-block mt-4 text-primary font-medium hover:underline">Learn more →</a>
-            </div>
-            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
-                <div class="text-primary mb-4">
-                    <i data-feather="check-circle" class="w-12 h-12"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Voter Registration</h3>
-                <p class="text-gray-600">Check your registration status or register to vote online.</p>
-                <a href="registration.html" class="inline-block mt-4 text-primary font-medium hover:underline">Register now →</a>
-            </div>
-            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
-                <div class="text-primary mb-4">
-                    <i data-feather="bar-chart-2" class="w-12 h-12"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Historical Data</h3>
-                <p class="text-gray-600">Explore past election results and voter participation statistics.</p>
-                <a href="results.html" class="inline-block mt-4 text-primary font-medium hover:underline">View data →</a>
-            </div>
-        </section>
+<!-- Hero -->
+<section class="bg-gradient-to-br from-primary to-secondary text-white">
+  <div class="max-w-7xl mx-auto px-6 py-24 text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+      Square Country Electoral Commission
+    </h1>
+    <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">
+      Protecting democracy through fair, transparent, and trusted elections.
+    </p>
 
-        <!-- News Section -->
-        <section class="bg-primary/5 p-8 rounded-xl">
-            <h2 class="text-3xl font-bold text-primary mb-8">Latest News</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <article class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full">Update</span>
-                        <span class="text-gray-500 text-sm">March 15, 2024</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">New Voting Centers Announced</h3>
-                    <p class="text-gray-600 mb-4">15 additional voting centers will be available for the upcoming regional elections...</p>
-                    <a href="#" class="text-primary font-medium hover:underline">Read more →</a>
-                </article>
-                <article class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full">Notice</span>
-                        <span class="text-gray-500 text-sm">March 10, 2024</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Voter ID Requirements Updated</h3>
-                    <p class="text-gray-600 mb-4">The electoral commission has announced changes to acceptable forms of voter identification...</p>
-                    <a href="#" class="text-primary font-medium hover:underline">Read more →</a>
-                </article>
-            </div>
-        </section>
-    </main>
+    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+      <a href="voting.html"
+         class="bg-white text-primary font-bold px-8 py-4 rounded-xl shadow-lg hover:scale-105 transition">
+        How to Vote
+      </a>
+      <a href="results.html"
+         class="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary transition">
+        View Results
+      </a>
+    </div>
+  </div>
+</section>
 
-    <custom-footer></custom-footer>
+<main class="max-w-7xl mx-auto px-6 py-20">
 
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="script.js"></script>
-    <script>
-        feather.replace();
-    </script>
+  <!-- Key Services -->
+  <section class="grid gap-8 md:grid-cols-3 mb-20">
+    <div class="bg-white rounded-2xl p-8 shadow hover:shadow-xl transition hover:-translate-y-1">
+      <i data-feather="calendar" class="w-12 h-12 text-primary mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Election Dates</h3>
+      <p class="text-slate-600">
+        Upcoming elections, enrolment deadlines, and important milestones.
+      </p>
+      <a href="election-dates.html"
+         class="inline-block mt-4 font-semibold text-primary hover:underline">
+        Learn more →
+      </a>
+    </div>
+
+    <div class="bg-white rounded-2xl p-8 shadow hover:shadow-xl transition hover:-translate-y-1">
+      <i data-feather="check-circle" class="w-12 h-12 text-primary mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Voter Registration</h3>
+      <p class="text-slate-600">
+        Enrol to vote or check your current registration status online.
+      </p>
+      <a href="registration.html"
+         class="inline-block mt-4 font-semibold text-primary hover:underline">
+        Register now →
+      </a>
+    </div>
+
+    <div class="bg-white rounded-2xl p-8 shadow hover:shadow-xl transition hover:-translate-y-1">
+      <i data-feather="bar-chart-2" class="w-12 h-12 text-primary mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Election Data</h3>
+      <p class="text-slate-600">
+        Access historical results, turnout figures, and voting trends.
+      </p>
+      <a href="results.html"
+         class="inline-block mt-4 font-semibold text-primary hover:underline">
+        View data →
+      </a>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section>
+    <h2 class="text-3xl font-extrabold mb-8 text-primary">
+      Latest Updates
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">
+            Update
+          </span>
+          <span class="text-slate-500 text-sm">15 March 2024</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">
+          New Voting Centres Announced
+        </h3>
+        <p class="text-slate-600 mb-4">
+          Fifteen additional voting centres will open for the upcoming regional elections.
+        </p>
+        <a href="news-votingcentres.html"
+           class="font-semibold text-primary hover:underline">
+          Read more →
+        </a>
+      </article>
+
+      <article class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">
+            Notice
+          </span>
+          <span class="text-slate-500 text-sm">10 March 2024</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">
+          Voter ID Requirements Updated
+        </h3>
+        <p class="text-slate-600 mb-4">
+          Changes have been made to acceptable forms of voter identification.
+        </p>
+        <a href="#"
+           class="font-semibold text-primary hover:underline">
+          Read more →
+        </a>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<custom-footer></custom-footer>
+
+<script src="components/navbar.js"></script>
+<script src="components/footer.js"></script>
+<script>
+  feather.replace();
+</script>
+
 </body>
 </html>
-
-
-
-
-<!-- Stored Voting Access -->
-
-        <!-- Voting Banner -->
-    <div id="alert-bar" class="bg-orange-400 text-black text-center py-3 px-4 font-medium relative">
-  Voting is now live: 
-  <a href="vote.html" class="font-semibold hover:underline ml-1">Vote Here</a>
-  <button onclick="document.getElementById('alert-bar').style.display='none'"
-    class="absolute right-4 top-2 text-black hover:text-gray-700 text-xl">&times;</button>
-</div>
