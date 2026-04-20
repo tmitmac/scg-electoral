@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SquareVote - Electoral Commission</title>
+    <title>Square Country Electoral Commission</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -149,26 +149,89 @@
             </div>
 
             <!-- Party Vote -->
-            <div>
-                <h4 class="text-xl font-semibold text-orange-500 mb-2 mt-6">
-                    2. Party Vote
-                </h4>
-                <p class="text-sm text-gray-600 mb-3">
-                    Choose the political party you want to form government.
-                </p>
+<div class="relative mt-6">
+    <h4 class="text-xl font-semibold text-orange-500 mb-2">
+        2. Party Vote
+    </h4>
+    <p class="text-sm text-gray-600 mb-3">
+        Choose the political party you want to form government.
+    </p>
 
-                <label class="block text-gray-700 font-medium mb-1" for="partyVote">
-                    Political Party
-                </label>
-                <select id="partyVote" name="partyVote" class="w-full border border-gray-300 rounded-md p-2" required>
-                    <option value="">-- Select Party --</option>
-                    <option value="freedoms">Freedoms Party</option>
-                    <option value="liberty">Liberty Party</option>
-                    <option value="green">Square Country Greens</option>
-                    <option value="innovation">Innovation Party</option>
-                    <option value="first">Square Country First</option>
-                </select>
-            </div>
+    <label class="block text-gray-700 font-medium mb-1" for="partyVoteInput">
+        Political Party
+    </label>
+
+    <!-- Hidden input -->
+    <input type="hidden" id="partyVoteInput" name="partyVote" required>
+
+    <!-- Dropdown button -->
+    <button type="button"
+        id="partyDropdownBtn"
+        class="w-full flex justify-between items-center border border-gray-300 rounded-md px-4 py-2 bg-white hover:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-300">
+        <span id="partySelected" class="text-gray-400">
+            -- Select Party --
+        </span>
+        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+
+    <!-- Dropdown menu -->
+    <div id="partyDropdownMenu"
+        class="absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg hidden max-h-60 overflow-y-auto">
+        <ul class="divide-y">
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="freedoms">Freedoms Party</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="liberty">Liberty Party</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="green">Square Country Greens</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="innovation">Innovation Party</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="immigration">Anti Immigration Front</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="social-justice">New Democrats</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="social-justice">Social Justice Movement</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="rural">Rural Interests Party</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="monarchists">Square Monarchists</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="tax">Tax Reform Alliance</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="speech">Free Speech Party</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="libertarian">Square Libertarian Coalition</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="communist">Communist Party of Square Country</li>
+            <li class="px-4 py-2 hover:bg-orange-50 cursor-pointer" data-value="socialist-credit">Socialist Credit Party</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const partyBtn = document.getElementById("partyDropdownBtn");
+    const partyMenu = document.getElementById("partyDropdownMenu");
+    const partySelected = document.getElementById("partySelected");
+    const partyInput = document.getElementById("partyVoteInput");
+
+    // Toggle menu
+    partyBtn.addEventListener("click", () => {
+        partyMenu.classList.toggle("hidden");
+    });
+
+    // Select party
+    partyMenu.querySelectorAll("li").forEach(item => {
+        item.addEventListener("click", () => {
+            const value = item.dataset.value;
+            const label = item.textContent;
+
+            partySelected.textContent = label;
+            partySelected.classList.remove("text-gray-400");
+            partySelected.classList.add("text-gray-800");
+
+            partyInput.value = value;
+            partyMenu.classList.add("hidden");
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!partyBtn.contains(e.target) && !partyMenu.contains(e.target)) {
+            partyMenu.classList.add("hidden");
+        }
+    });
+</script>
 
             <!-- Submit -->
             <button type="submit" class="w-full bg-orange-500 text-white px-4 py-3 rounded-md font-semibold hover:bg-orange-600 transition">
