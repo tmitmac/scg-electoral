@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Voting Centres | SquareVote</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#FF7B25',
+              secondary: '#FFA364'
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Page Header -->
+        <section class="text-center mb-14">
+            <h1 class="text-4xl font-bold text-primary mb-4">
+                New Voting Centres Announced
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                The Square Country Electoral Commission has confirmed additional voting centres
+                to improve access and reduce wait times for the upcoming election.
+            </p>
+        </section>
+
+        <!-- Key Notice -->
+        <section class="bg-primary/10 border-l-4 border-primary p-6 rounded-lg mb-12">
+            <div class="flex items-start gap-4">
+                <i data-feather="info" class="w-6 h-6 text-primary mt-1"></i>
+                <p class="text-gray-700">
+                    These centres will be operational on <strong>Advance Voting Days</strong> and
+                    <strong>Election Day</strong>. Voters may cast their ballot at
+                    <strong>any voting centre nationwide</strong>, regardless of electorate. However, delays should be expected for out-of-electorate voting.
+                </p>
+            </div>
+        </section>
+
+        <!-- Voting Centres List -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6">Additional Voting Centres</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Centre Card -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-lg mb-1">Arthur Dudley Village Park</h3>
+                    <p class="text-gray-600 text-sm mb-2">
+                        14 Arthur Road, Arthur Dudley Village
+                    </p>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <i data-feather="clock" class="w-4 h-4"></i>
+                        Open 9:00am – 7:00pm
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-lg mb-1">Homferton Connection Centre</h3>
+                    <p class="text-gray-600 text-sm mb-2">
+                        88 Harbour Road, Homferton City
+                    </p>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <i data-feather="clock" class="w-4 h-4"></i>
+                        Open 9:00am – 6:00pm
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-lg mb-1">Premier Legacy Trust</h3>
+                    <p class="text-gray-600 text-sm mb-2">
+                        102 Northern Highway, Rolleston
+                    </p>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <i data-feather="clock" class="w-4 h-4"></i>
+                        Open 8:30am – 7:30pm
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-lg mb-1">Southridge Sports Pavilion</h3>
+                    <p class="text-gray-600 text-sm mb-2">
+                        5 Memorial Park Road, Southridge, Square City
+                    </p>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <i data-feather="clock" class="w-4 h-4"></i>
+                        Open 9:00am – 7:00pm
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-lg mb-1">Capital Technical Institute</h3>
+                    <p class="text-gray-600 text-sm mb-2">
+                        1 Technology Way, Viaduct, Square City
+                    </p>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <i data-feather="clock" class="w-4 h-4"></i>
+                        Open 8:00am – 8:00pm
+                    </div>
+                </div>
+
+                 <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-lg mb-1">South Meston High School</h3>
+                    <p class="text-gray-600 text-sm mb-2">
+                        12 Meston Hills Road, Meston, Square City
+                    </p>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <i data-feather="clock" class="w-4 h-4"></i>
+                        Open 8:00am – 8:00pm
+                    </div>
+                </div>
+                 <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-lg mb-1">Queenstown Youth Centre</h3>
+                    <p class="text-gray-600 text-sm mb-2">
+                        14 Great Northern Road, Mountainview, Queenstown
+                    </p>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <i data-feather="clock" class="w-4 h-4"></i>
+                        Open 8:00am – 8:00pm
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Accessibility Info -->
+        <section class="bg-white rounded-xl shadow-md p-8 mb-16">
+            <h2 class="text-2xl font-bold mb-4">Accessibility & Assistance</h2>
+            <ul class="space-y-3 text-gray-600">
+                <li>• All listed centres are wheelchair accessible</li>
+                <li>• Assistance is available for voters with disabilities</li>
+                <li>• Voters may bring a support person</li>
+                <li>• Language assistance is available at select locations</li>
+            </ul>
+        </section>
+
+        <!-- CTA -->
+        <section class="text-center">
+            <a href="news-votingcentres.html#text-center"
+               class="inline-block bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition">
+                Vote Now
+            </a>
+            <p class="text-sm text-gray-500 mt-4">
+                Voting does not open until early October 2026.
+            </p>
+        </section>
+
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
